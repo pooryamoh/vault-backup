@@ -52,6 +52,7 @@ func init() {
 func backup(dockerId string, volume string, dateFormat string, rclonePath string) bool {
 
 	command := fmt.Sprintf("docker stop %s", dockerId)
+
 	_, err := exec.Command("bash", "-c", command).Output()
 
 	if err != nil {
@@ -60,7 +61,7 @@ func backup(dockerId string, volume string, dateFormat string, rclonePath string
 
 	dt := time.Now()
 	filename := fmt.Sprint(dt.Format(dateFormat) + ".tar")
-	command = fmt.Sprintf("tar -cf %s %s", filename, volume)
+	command = fmt.Sprintf("tar -cf /tmp/%s %s", filename, volume)
 	_, err = exec.Command("bash", "-c", command).Output()
 
 	if err != nil {
