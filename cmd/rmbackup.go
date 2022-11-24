@@ -13,7 +13,7 @@ import (
 // rmbackupCmd represents the rmbackup command
 var rmbackupCmd = &cobra.Command{
 	Use:   "rmbackup",
-	Short: "A brief description of your command",
+	Short: "Remove backups before an specfic time range",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 

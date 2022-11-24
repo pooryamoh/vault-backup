@@ -13,7 +13,7 @@ import (
 // backupCmd represents the backup command
 var backupCmd = &cobra.Command{
 	Use:   "backup",
-	Short: "A brief description of your command",
+	Short: "Take a backup and upload using rclone",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
@@ -32,7 +32,13 @@ func init() {
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// backupCmd.PersistentFlags().String("foo", "", "A help for foo")
+	backupCmd.PersistentFlags().String("dockerid", "d", "Docker ID of container")
+	backupCmd.PersistentFlags().String("volume", "v", "Path of docker volume")
+	backupCmd.PersistentFlags().String("dateformat", "f", "Date format of filename")
+	backupCmd.PersistentFlags().String("rclonepath", "p", "Path of rclone remote \"remotename:path\"")
+
+
+
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
