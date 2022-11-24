@@ -61,7 +61,8 @@ func backup(dockerId string, volume string, dateFormat string, rclonePath string
 
 	dt := time.Now()
 	filename := fmt.Sprint(dt.Format(dateFormat) + ".tar")
-	command = fmt.Sprintf("tar -cf /tmp/%s %s", filename, volume)
+	//command = fmt.Sprintf("tar -cf /tmp/%s %s", filename, volume)
+	command = fmt.Sprintf("7z a -t7z /tmp/%s %s", filename, volume)
 	_, err = exec.Command("bash", "-c", command).Output()
 
 	if err != nil {
