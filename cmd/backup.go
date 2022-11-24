@@ -39,10 +39,10 @@ func init() {
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	backupCmd.PersistentFlags().String("dockerid", "d", "Docker ID of container")
-	backupCmd.PersistentFlags().String("volume", "v", "Path of docker volume")
-	backupCmd.PersistentFlags().String("dateformat", "f", "Date format of filename")
-	backupCmd.PersistentFlags().String("rclonepath", "p", "Path of rclone remote \"remotename:path\"")
+	backupCmd.PersistentFlags().StringP("dockerid", "d", "", "Docker ID of container")
+	backupCmd.PersistentFlags().StringP("volume", "v", "", "Path of docker volume")
+	backupCmd.PersistentFlags().StringP("dateformat", "f", "", "Date format of filename")
+	backupCmd.PersistentFlags().StringP("rclonepath", "p", "", "Path of rclone remote \"remotename:path\"")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
